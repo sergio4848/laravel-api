@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/merhaba', function () {
+    return "merhabe API";
+});
+
+
+Route::get('/merhaba-json2', function () {
+    return response(['message'=>"merhaba API"],200)
+        ->header('Content Type','text/plain');
+});
+
+Route::get('/product/{id}/{type?}', function ($id,$r_type='test') {
+    return "Product Id: $id Type: $r_type";
+});
